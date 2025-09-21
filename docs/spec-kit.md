@@ -12,3 +12,6 @@ Step 4:
 
 Step 5:
 /tasks
+
+Step 6:
+I need your help to create a Git Issue added for each Phases, Share the plan and execute carefully.
