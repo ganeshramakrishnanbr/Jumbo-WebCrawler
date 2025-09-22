@@ -4,33 +4,12 @@ import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { ChevronDownIcon, ChevronRightIcon, QuestionMarkCircledIcon } from '@radix-ui/react-icons'
 import * as Tooltip from '@radix-ui/react-tooltip'
-
-export interface CrawlConfig {
-  maxPages: number
-  maxDepth: number
-  respectRobotsTxt: boolean
-  crawlDelay: number
-  includeExternalLinks: boolean
-  contentTypes: string[]
-  userAgent: string
-  timeout: number
-}
+import { defaultConfig, type CrawlConfig } from './crawlConfig'
 
 interface CrawlConfigPanelProps {
   config: CrawlConfig
   onChange: (config: CrawlConfig) => void
   disabled?: boolean
-}
-
-const defaultConfig: CrawlConfig = {
-  maxPages: 50,
-  maxDepth: 3,
-  respectRobotsTxt: true,
-  crawlDelay: 1000,
-  includeExternalLinks: false,
-  contentTypes: ['text/html'],
-  userAgent: 'JumboWebCrawler/1.0',
-  timeout: 10000,
 }
 
 const CrawlConfigPanel: React.FC<CrawlConfigPanelProps> = ({
@@ -262,4 +241,3 @@ const CrawlConfigPanel: React.FC<CrawlConfigPanelProps> = ({
 }
 
 export default CrawlConfigPanel
-export { defaultConfig }

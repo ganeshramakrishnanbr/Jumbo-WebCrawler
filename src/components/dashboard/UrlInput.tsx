@@ -43,7 +43,7 @@ const UrlInput: React.FC<UrlInputProps> = ({
       setValidationState('valid')
       setValidationMessage('Valid URL')
       return true
-    } catch (error) {
+    } catch {
       setValidationState('invalid')
       setValidationMessage('Invalid URL format')
       return false
@@ -80,7 +80,7 @@ const UrlInput: React.FC<UrlInputProps> = ({
   // Handle Enter key press
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      handleSubmit(e as any)
+      handleSubmit(e as React.FormEvent)
     } else if (e.key === 'ArrowDown' && history.length > 0) {
       setShowHistory(true)
     } else if (e.key === 'Escape') {
